@@ -13,6 +13,8 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 
+const mongooseurl = process.env.MONGODB_URI;
+
 
 mongoose.connect(mongooseurl, {
   useNewUrlParser: true,
