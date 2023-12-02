@@ -13,6 +13,25 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 
+
+mongoose.connect(mongooseurl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+mongoose.connection.on('connected', () => {
+  console.log("Connected to mongo");
+});
+
+mongoose.connection.on('error', (err) => {
+  console.log("Error connecting", err);
+});
+
+app.get('/', (req, res) => {
+  res.send('Hello World');
+  res.end();
+})
+
 const uri = mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log('db started'));
