@@ -1,6 +1,7 @@
-const CategoryModel = require('../models/CategoryModel');
-const PostModel = require('../models/PostModel');
-const UserModel = require('../models/UserModel');
+import PostModel from '../models/post-model.js';
+import UserModel from '../models/user-model.js';
+import CategoryModel from '../models/category-model.js';
+
 
 exports.createPost = async (req, res) => {
   const { body, category, subcategory, title } = req.body;

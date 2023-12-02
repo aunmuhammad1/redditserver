@@ -1,4 +1,4 @@
-const CategoryModel = require('../models/CategoryModel');
+import CategoryModel from '../models/category-model.js';
 
 exports.createCategory = async (req, res) => {
   let { category } = req.body;

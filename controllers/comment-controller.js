@@ -1,5 +1,5 @@
-const CommentModel = require("../models/CommentModel");
-const PostModel = require("../models/PostModel");
+import CommentModel from "../models/comment-model.js";
+import PostModel from "../models/post-model.js";
 
 exports.createComment = async (req, res) => {
   const { username, _id } = req.user;

@@ -1,35 +1,36 @@
-const express = require("express");
-const { protect } = require("../middleware/auth-middleware");
+import express from "express";
+import protect from "../middleware/auth-middleware";
 
 const router = express.Router();
-const { register, login } = require("../controllers/auth-controller");
-const {
+import { login, register } from "../controllers/auth-controller";
+import {
   createPost,
   getAllPosts,
+  getOnePost,
+  deletePost,
   vote,
   savePost,
-  getUser,
-  getOnePost,
-  getOneSubCategory,
   getSavedPosts,
   getSubmittedPosts,
   getSearchedPost,
-  getPopular,
-  deletePost,
-} = require("../controllers/post-controller");
-const {
+} from "../controllers/post-controller";
+import {
   createCategory,
-  createSubcategory,
   getAllCategories,
-  getAllSubcategories,
-} = require("../controllers/category-controller");
+} from "../controllers/category-controller";
 
-const {
+import {
+  createSubcategory,
+  getAllSubcategories,
+  getOneSubCategory,
+} from "../controllers/subcategory-controller";
+
+import {
   createComment,
   getComments,
-  commentVote,
   deleteComment,
-} = require("../controllers/comment-controller");
+  commentVote,
+} from "../controllers/comment-controller";
 
 router.post("/login", login);
 router.post("/register", register);
