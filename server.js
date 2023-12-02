@@ -18,7 +18,7 @@ dotenv.config({ path: './.env' });
 
 app.use(bodyParser.json());
 
-const mongooseurl = 'mongodb+srv://physicsbook:VyjXsryB2p8VRrgX@cluster0.pjsmtiy.mongodb.net/?retryWrites=true&w=majority'
+const mongooseurl = process.env.MONGODB_URI;
 
 mongoose.connect(mongooseurl, {
     useNewUrlParser: true,
